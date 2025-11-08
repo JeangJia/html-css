@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background</title>
+</head>
+<style>
+    .bgc {
+        /* 背景颜色 */
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        /* transparent 透明 */
+    }
+
+    .bgi {
+        /* 背景图片 */
+        width: 400px;
+        height: 400px;
+        background-color: #ccc;
+        background-image: url(images/001.jpg);
+        /* background-image: none; 不添加*/
+        background-repeat: no-repeat;
+        /* background-repeat:repeat / no-repeat / repeat-x / repeat-y; */
+        /* 背景平铺属性 可以结合背景颜色使用填充 */
+        background-size: 200px;
+        /* background-size 设置背景图片的大小 写一个参数(可以是百分比)是宽度 另一个参数高度自适应 */
+        background-size: cover;
+        /* cover 背景图片会等比例缩放以填充整个容器 可能会有部分背景图片被裁剪 */
+        /* 宽高都到最大 停止拉伸 */
+        background-size: contain;
+        /* contain 背景图片会等比例缩放以适应容器 可能会有容器被背景图片填充 */
+        /* 宽高有一个到最大 停止拉伸 */
+    }
+
+    .bgp {
+        /* 背景位置 */
+        width: 400px;
+        height: 400px;
+        background-image: url(images/001.jpg);
+        background-color: pink;
+        background-repeat: no-repeat;
+        /* background-position: x y; */
+        background-position: center;
+        /* 背景位置 可以设置具体的像素值 也可以设置百分比 */
+        /* 也可以是 方位名词 top / bottom / left / right / center  */
+        /* 两者可以混合使用 */
+        /* 方位名词可以省略一个 理解为从中间出发 */
+    }
+
+    .bga {
+        /* 背景附着 */
+        background-attachment: fixed;
+        /* 背景附着属性 可以设置背景是否固定不动 */
+        /* fixed 固定不动 滚动条滚动时背景不动 */
+        /* scroll 滚动时背景滚动 */
+    }
+
+    /* 五种属性可以复合 */
+    .bg {
+        /* 没有顺序一般按照 颜色 背景图片地址 背景平铺 背景位置 背景附着 */
+        background: pink url(images/001.jpg) no-repeat center fixed;
+    }
+
+    .bgr {
+        /* 背景颜色透明度 */
+        background-color: rgba(255, 192, 203, .2);
+    }
+
+    .bgc {
+        /* 渐变背景 */
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(to left, pink, red);
+        /* 线性渐变 90deg 角度 可以是 0deg / 45deg / 90deg / 135deg / 180deg */
+        /* 也可以是 方位名词 to top(默认) / to bottom / to left / to right */
+        /* 也可以是 多个颜色值 用逗号隔开 */
+    }
+</style>
+
+<body>
+
+    <div class="bgc"></div>
+    <br>
+    <div class="bgi"></div>
+    <br>
+    <div class="bgp bgr"></div>
+
+</body>
+
+</html>

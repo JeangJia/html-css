@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        /* 3D转换 透视 perspective */
+        /*要写在父元素上 */
+        perspective: 800px;
+        /* 保持3D转换的效果 */
+        /* 要写在父元素上 */
+        transform-style: preserve-3d;
+        /* flat 平面 */
+        /* 透视原点 perspective-origin */
+        /* 可以改变3D元素的观察角度 */
+        /* 默认值 50% 50% 表示元素的中心 */
+        /* 可以设置为 0% 0% 表示元素的左上角 */
+        /* 可以设置为 100% 100% 表示元素的右下角 */
+        /* 可以设置为 50% 0% 表示元素的中心顶部 */
+        /* 可以设置为 0% 50% 表示元素的中心左侧 */
+        /* 可以设置为 100% 50% 表示元素的中心右侧 */
+        /* 可以设置为 50% 100% 表示元素的中心底部 */
+        perspective-origin: 50% 50%;
+    }
+
+    .d {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        /* 3D转换 移动 translate3d(x,y,z) */
+        /* transform: translateX(200px);
+        transform: translateY(200px);
+        transform: translateZ(200px); */
+        transform: translate3d(1600px, 200px, 0px);
+    }
+
+    .p {
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+        background-image: url(./images/001.jpg);
+        background-size: cover;
+        background-color: red;
+        /* 3D转换 旋转 rotateX rotateY rotateZ */
+        /* transform: rotateX(45deg); */
+        /* transform: rotateY(45deg); */
+        /* transform: rotateZ(45deg);  */
+        /* transform:rotate3d(x,y,z,deg) 可以自定义旋转轴 */
+        transition: all 1s;
+    }
+
+    p:hover {
+        transform: rotateX(360deg);
+    }
+
+    .box {
+        /* 3D转换 透视 perspective */
+        /*要写在父元素上 */
+        perspective: 1000px;
+        /* 保持3D转换的效果 */
+        transform-style: preserve-3d;
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        transition: all 1s;
+    }
+
+    .item {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transform: rotateX(90deg);
+    }
+
+    .box:hover {
+        transform: rotateY(-360deg);
+    }
+
+    /* .box:hover .item {
+        transform: rotateX(0deg);
+    } */
+</style>
+
+<body>
+    <div class="d"></div>
+    <p class="p"></p>
+    <div class="box">
+        <div class="item"></div>
+    </div>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,40 +10,59 @@
     @keyframes move {
         0% {
             transform: translate(0, 0);
-            transform: rotate(30deg);
         }
-        /* 25% {
-            transform: translate(1000px,0px); */
-            /* transform-origin: 0 0; */
-            /* transform: rotate(180deg); */
-            /* transform: scale(0.5); */
-        /* }
+
+        25% {
+            transform: translate(1000px, 0px);
+
+        }
+
         50% {
-            transform: translate(1000px,1000px);
-        }
-        75% {
-            transform: translate(0px,1000px);
-        } */
-        100% {
             transform: translate(1000px, 1000px);
         }
+
+        75% {
+            transform: translate(0px, 1000px);
+        }
+
+        100% {
+            transform: translate(0px, 0px);
+        }
     }
+
     * {
         margin: 0;
         padding: 0;
     }
+
     div {
         width: 200px;
         height: 200px;
         background-color: pink;
-        transition: all .1s;
-        animation: move 1s  infinite ;
+        /* 动画名称 */
+        animation-name: move;
+        /* 动画持续时间 */
+        animation-duration: 2000ms;
+        /* 动画速度曲线 ease/linear/ease-in/ease-out/ease-in-out/steps(分步) */
+        animation-timing-function: linear;
+        /* 动画延迟时间 */
+        animation-delay: 0s;
+        /* 动画播放次数 默认1 可以设置为infinite无限循环 */
+        animation-iteration-count: infinite;
+        /* 动画播放方向 normal/alternate 正常播放/反向播放 */
+        animation-direction: alternate;
+        /* 动画填充模式 forwards/backwards/both 动画结束后保持最后一帧/动画开始前保持第一帧/同时保持第一帧和最后一帧 */
+        animation-fill-mode: forwards;
+        /* 动画播放状态 running/paused 运行/暂停*/
+        animation-play-state: running;
+        /* 简写 动画名称 持续时间 速度曲线 延迟时间 播放次数 播放方向 填充模式 播放状态 */
+        animation: move 2000ms linear 0s infinite alternate forwards running;
     }
-
-
 </style>
+
 <body>
     <div></div>
-    
+
 </body>
+
 </html>

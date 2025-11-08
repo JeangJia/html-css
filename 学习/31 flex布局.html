@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .item {
+        width: 150px;
+        height: 150px;
+        background-color: pink;
+        /* margin: 10px; */
+        /* flex: 1; */
+    }
+
+    .box {
+        width: 500px;
+        height: 500px;
+        margin: 100px auto;
+        background-color: black;
+        /* 给父元素添加flex布局 */
+        display: flex;
+
+        /* flex-direction 设置主轴方向 */
+        /* row(默认)/ column / row-reverse / column-reverse 
+            行方向 / 列方向 / 从右到左 / 从下到上 */
+        flex-direction: row;
+
+        /* justify-content 设置主轴方向上子元素的对齐方式 */
+        /* flex-start(默认)/flex-end/center/space-between/space-around 
+        主轴起点/主轴终点/居中/两边贴边其余平均/平均分布(包括首尾) */
+        justify-content: space-between;
+
+        /* align-items 设置侧轴方向上子元素(单行)的对齐方式 */
+        /* flex-start(默认)/flex-end/center/baseline/stretch 
+        侧轴起点/侧轴终点/居中/基线对齐/拉伸 */
+        /* 拉伸 子元素(不要有width属性)会拉伸以填充侧轴方向上的空间 */
+        align-items: center;
+
+        /* align-content 设置侧轴方向上子元素(必须多行)的对齐方式 */
+        /* flex-start(默认)/flex-end/center/space-between/space-around 
+        侧轴起点/侧轴终点/居中/两边贴边其余平均/平均分布(包括首尾) */
+        align-content: space-between;
+
+        /* flex-wrap 设置子元素是否换行 */
+        /* nowrap(默认)/wrap/wrap-reverse 
+        不换行/换行/换行(从下到上) */
+        flex-wrap: wrap;
+
+        /* flex-flow 是 flex-direction 和 flex-wrap 的简写 */
+        flex-flow: row wrap;
+    }
+
+    .box .item:nth-child(4) {
+        /* align-self 侧轴方向上单独对齐 */
+        align-self: center;
+    }
+
+    .box .item:nth-child(2) {
+        /* order 默认是0 可以改变子元素的排列顺序 */
+        /* 越小越靠前 */
+        order: -1;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <span class="item">1</span>
+        <span class="item">2</span>
+        <span class="item">3</span>
+        <span class="item">4</span>
+        <span class="item">5</span>
+        <span class="item">6</span>
+    </div>
+</body>
+
+</html>

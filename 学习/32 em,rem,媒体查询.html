@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .box {
+        margin: 0 auto;
+        height: 2rem;
+        background-color: purple;
+    }
+
+
+    /* em 为相对单位,相对于父元素的字体大小 */
+    /* rem 为相对单位,相对于根元素(HTML)的字体大小(浏览器默认通常为16px)*/
+    .item {
+        /* 10rem = 10 * 16px = 160px */
+        height: 2rem;
+        background-color: pink;
+    }
+
+    /* 当屏幕宽度小于等于1000px时,将HTML字体大小设置为18px,背景颜色设置为黑色 */
+    @media screen and (max-width: 1000px) {
+        html {
+            font-size: 18px;
+            background-color: black;
+        }
+    }
+
+    /* 当屏幕宽度小于等于800px时,将HTML字体大小设置为14px,背景颜色设置为白色 */
+    @media screen and (max-width: 800px) {
+        html {
+            font-size: 14px;
+            background-color: white;
+        }
+    }
+
+    /* 当屏幕宽度大于等于1000px时,将HTML字体大小设置为12px,背景颜色设置为红色 */
+    @media screen and (min-width: 1000px) {
+        html {
+            font-size: 28px;
+            background-color: skyblue;
+        }
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="item">IT(信息技术)</div>
+    </div>
+
+</body>
+
+</html>

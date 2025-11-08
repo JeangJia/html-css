@@ -8,6 +8,8 @@
 </head>
 <style>
     .box {
+        /* 合并边框 border-collapse: collapse; */
+        border-collapse: collapse;
         width: 200px;
         height: 200px;
         background-color: pink;
@@ -26,14 +28,19 @@
     }
 
     p {
-        box-sizing:border-box;
+        box-sizing: border-box;
         /* 不让边框增加盒子的总尺寸 */
         width: 200px;
         height: 200px;
         border: 10px solid red;
         /* border: border-width border-style border-color */
         /* 简写 没有顺序 */
-
+        /* border: 10px solid red; */
+        padding: 10px;
+        /* 内边距 */
+        /* 可以分别设置上 右 下 左 */
+        /* 也可以写两个值 第一个值是上下 第二个值是左右 */
+        /* 也可以写三个值 第一个值是上 第二个值是左右 第三个值是下 */
     }
 
     .diy {
@@ -62,7 +69,6 @@
 
     /* box-sizing:border-box 边框盒子模型 */
     /* 宽度和高度包含内容的宽度和高度 内边距和边框不会增加盒子的总尺寸 */
-
 </style>
 
 <body>

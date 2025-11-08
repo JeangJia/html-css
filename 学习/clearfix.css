@@ -1,13 +1,6 @@
-
-
-
-
-
-
-
-
 /* 伪元素清除浮动 */
 /* 给父元素添加 clearfix 类名,即可清除子元素的浮动 */
+/* <link rel="stylesheet" href="clearfix.css"> 调用*/
 
 .clearfix:before,
 .clearfix:after {
