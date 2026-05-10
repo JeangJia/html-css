@@ -1,0 +1,477 @@
+/* CSS变量定义 */
+:root {
+    --primary-color: #ff5e62;
+    --secondary-color: #ff9a6c;
+    --text-color: #333;
+    --text-light: #666;
+    --bg-light: #fff3e0;
+    --bg-dark: #333;
+    --white: #fff;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+    --bg-alt: #f0f8ff;
+}
+
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+/* 添加平滑滚动效果 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 导航栏样式 - 添加过渡效果 */
+.nav {
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* 为了避免页面内容被固定导航栏遮挡，需要调整banner的上边距 */
+.banner {
+    margin-top: 60px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 15px;
+    display: block;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid var(--white);
+    transform: translateY(-2px);
+}
+
+/* banner样式 - 添加过渡效果 */
+.banner {
+    min-height: 800px;
+    height: 60vh;
+    background: url(https://vcg02.cfp.cn/creative/vcg/nowater800/new/VCG211385210183.jpg?x-oss-process=image/format,webp) no-repeat center;
+    background-size: cover;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.banner-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.banner-title {
+    font-size: clamp(24px, 5vw, 36px);
+    color: var(--text-color);
+    font-weight: bold;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.banner-subtitle {
+    font-size: clamp(16px, 2vw, 18px);
+    color: var(--text-light);
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.7s;
+}
+
+/* 核心内容区样式 - 添加过渡效果 */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 80px;
+    align-items: center;
+    position: relative;
+    transition: all 0.5s ease;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* 从下往上淡入动画 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 为每个main区块添加不同的动画延迟 */
+.main:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.main:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.main:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.main:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.main:nth-child(5) {
+    animation-delay: 1s;
+}
+
+/* 奇数部分样式 - 左图右文，带背景和阴影 */
+.main:nth-child(odd) {
+    background-color: rgba(255, 243, 224, 0.6);
+    padding: 40px 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-left: -30px;
+    transition: all 0.5s ease;
+}
+
+.main:nth-child(odd):hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+}
+
+/* 偶数部分样式 - 左文右图，带不同背景和阴影 */
+.main:nth-child(even) {
+    flex-direction: row-reverse;
+    background-color: rgba(240, 248, 255, 0.6);
+    padding: 40px 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-right: -30px;
+    transition: all 0.5s ease;
+}
+
+.main:nth-child(even):hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateX(-5px);
+}
+
+/* 奇数部分的卡片样式 */
+.main:nth-child(odd) .intro-card {
+    background-color: var(--bg-light);
+    transform: translateY(20px);
+    box-shadow: 0 6px 20px rgba(255, 94, 98, 0.15);
+    transition: all 0.5s ease;
+}
+
+/* 偶数部分的卡片样式 */
+.main:nth-child(even) .intro-card {
+    background-color: var(--bg-alt);
+    transform: translateY(-20px);
+    box-shadow: 0 6px 20px rgba(0, 191, 255, 0.15);
+    transition: all 0.5s ease;
+}
+
+.carousel {
+    width: 65%;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+/* 奇数部分的轮播图位置调整 */
+.main:nth-child(odd) .carousel {
+    transform: translateX(-10px);
+    transition: all 0.5s ease;
+}
+
+/* 偶数部分的轮播图位置调整 */
+.main:nth-child(even) .carousel {
+    transform: translateX(10px);
+    transition: all 0.5s ease;
+}
+
+.carousel:hover {
+    transform: scale(1.02) !important;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.carousel:hover img {
+    transform: scale(1.05);
+}
+
+.carousel-desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--white);
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    backdrop-filter: blur(5px);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.carousel:hover .carousel-desc {
+    transform: translateY(0);
+}
+
+.intro-card {
+    width: 32%;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.intro-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+}
+
+.intro-title {
+    font-size: 22px;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.intro-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.intro-card:hover .intro-title::after {
+    width: 80px;
+}
+
+.intro-content {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.8;
+    transition: color 0.3s ease;
+}
+
+/* 底部样式 - 添加过渡效果 */
+.footer {
+    background: var(--bg-dark);
+    color: var(--white);
+    min-height: 80px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-link {
+    color: var(--white);
+    font-size: 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.footer-link:hover {
+    color: var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.footer-link span {
+    font-size: 14px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .main {
+        flex-direction: column;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 30px 20px !important;
+    }
+    
+    .main:nth-child(even) {
+        flex-direction: column;
+    }
+    
+    .carousel,
+    .intro-card {
+        width: 100%;
+    }
+    
+    .carousel {
+        height: 350px;
+    }
+    
+    /* 响应式下调整卡片位置 */
+    .main:nth-child(odd) .intro-card,
+    .main:nth-child(even) .intro-card {
+        transform: translateY(0);
+    }
+    
+    /* 响应式下调整轮播图位置 */
+    .main:nth-child(odd) .carousel,
+    .main:nth-child(even) .carousel {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 0 10px;
+    }
+    
+    .nav-list {
+        gap: 10px;
+    }
+    
+    .nav-link {
+        padding: 0 10px;
+        font-size: 14px;
+    }
+    
+    .banner {
+        height: 50vh;
+    }
+    
+    .main-content {
+        padding: 20px 10px;
+    }
+    
+    .main {
+        margin-bottom: 50px;
+        gap: 20px;
+    }
+    
+    .carousel {
+        height: 280px;
+    }
+    
+    .intro-card {
+        padding: 20px;
+    }
+    
+    .footer {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .footer-icons {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        height: 220px;
+    }
+    
+    .nav ul {
+        margin: 0;
+    }
+    
+    .intro-title {
+        font-size: 20px;
+    }
+    
+    .intro-content {
+        font-size: 13px;
+    }
+}

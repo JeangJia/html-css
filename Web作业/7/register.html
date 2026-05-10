@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青春武汉——注册</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 注册页面专属样式 */
+        .register-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .register-title {
+            font-size: 24px;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .register-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            color: var(--text-color);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(255, 94, 98, 0.1);
+        }
+
+        .register-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 94, 98, 0.3);
+        }
+
+        .register-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .register-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .register-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* 武汉元素装饰 */
+        .wuhan-decoration {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 48px;
+        }
+
+        /* 表单分组 */
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 480px) {
+            .form-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">首页</a></li>
+                <li class="nav-item"><a href="study-route.html" class="nav-link">研学路线</a></li>
+                <li class="nav-item"><a href="culture.html" class="nav-link">文化传承</a></li>
+                <li class="nav-item"><a href="index.html#features" class="nav-link">文化特色</a></li>
+                <li class="nav-item"><a href="index.html#stories" class="nav-link">青春故事</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">联系我们</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link">登录</a></li>
+                <li class="nav-item"><a href="register.html" class="nav-link">注册</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 核心内容区 -->
+    <main class="main-content">
+        <div class="register-container">
+            <div class="wuhan-decoration">🌉</div>
+            <h2 class="register-title">青春武汉 - 用户注册</h2>
+            <form action="#" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="username" class="form-label">用户名</label>
+                        <input type="text" id="username" name="username" class="form-input" placeholder="请输入用户名" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nickname" class="form-label">昵称</label>
+                        <input type="text" id="nickname" name="nickname" class="form-input" placeholder="请输入昵称" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email" class="form-label">邮箱</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="请输入邮箱" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">手机号</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="请输入手机号">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password" class="form-label">密码</label>
+                        <input type="password" id="password" name="password" class="form-input" placeholder="请输入密码" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_password" class="form-label">确认密码</label>
+                        <input type="password" id="confirm_password" name="confirm_password" class="form-input" placeholder="请再次输入密码" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">
+                        <input type="checkbox" name="agree" required> 我已阅读并同意<a href="#" style="color: var(--primary-color);">《用户协议》</a>和<a href="#" style="color: var(--primary-color);">《隐私政策》</a>
+                    </label>
+                </div>
+                <button type="submit" class="register-btn">立即注册</button>
+                <div class="register-footer">
+                    <p>已有账号？<a href="login.html">立即登录</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- 底部 -->
+    <footer class="footer">
+        <div class="copyright">©2025青春武汉网页创作 前端B2401版权所有</div>
+        <div class="footer-icons">
+            <a href="study-route.html" class="footer-link">
+                <i class="icon-route">📌</i>
+                <span>学习路线</span>
+            </a>
+            <a href="index.html#culture" class="footer-link">
+                <i class="icon-culture">🎨</i>
+                <span>文化体验</span>
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>
