@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动标签输入框</title>
+    <style>
+        .box {
+            position: relative;
+            width: 220px;
+            margin: 50px auto;
+        }
+
+        .box input {
+            outline: none;
+            width: 100%;
+            height: 35px;
+            padding: 0 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+            color: #000;
+            z-index: 2;
+        }
+
+        .box input+span {
+            display: block;
+            /* height: 35px; */
+            position: absolute;
+            left: 10px;
+            top: 4px;
+            color: #ccc;
+            font-size: 1em;
+            /* 让点击穿透到输入框 */
+            pointer-events: none;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+
+        .box input:focus+span,
+        /* 输入框有内容时(placeholder不显示) */
+        .box input:not(:placeholder-shown)+span {
+            font-size: 0.75em;
+            top: -6px;
+            left: 10px;
+            color: #4a90d9;
+            background: #fff;
+            padding: 0 4px;
+            line-height: 1;
+        }
+
+        .box input:focus {
+            border-color: #4a90d9;
+            box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 注意:placeholder必须设置为空格,否则:not(:placeholder-shown)无法正常工作 -->
+        <input type="text" placeholder=" ">
+        <span>Your Name</span>
+    </div>
+     <div class="box">
+        <!-- 注意:placeholder必须设置为空格,否则:not(:placeholder-shown)无法正常工作 -->
+        <input type="password" placeholder=" ">
+        <span>Your Password</span>
+    </div>
+</body>
+
+</html>
