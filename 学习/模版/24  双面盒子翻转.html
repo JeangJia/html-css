@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            margin: 200px auto;
+            width: 250px;
+            height: 400px;
+            border: 1px solid #000;
+            /* 给父元素添加透视效果 */
+            perspective: 500px;
+        }
+
+        .box>div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 控制元素背面可见性 */
+            backface-visibility: hidden;
+            /* 开启3d空间 */
+            transform-style: preserve-3d;
+        }
+
+        .front {
+            z-index: 1;
+            background-color: #00aeec;
+            transition: linear .4s;
+        }
+
+        .box:hover .front {
+            transform: rotateY(-180deg);
+        }
+
+        .box:hover .back {
+            transform: rotateY(0deg);
+        }
+
+        .front img {
+            transform: translate3d(0, 0, 30px);
+            /* 控制元素背面可见性 */
+            backface-visibility: hidden;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        .back {
+            background-color: #00aeec;
+            color: #fff;
+            transform: rotateY(180deg);
+            transition: linear .4s;
+        }
+
+        .back>div {
+            height: 100%;
+            width: 100%;
+            transform: translate3d(0, 0, 30px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* background:#00aeec url('https://plus.unsplash.com/premium_photo-1680732321104-7a97b2962200?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fCVFNSVBNCU4RiVFNSVBNCVBOXxlbnwwfHwwfHx8MA%3D%3D'); */
+        }
+         .back>div p{
+            margin: 6px 0;
+         }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="front"><img
+                src="https://images.unsplash.com/photo-1590753000377-81bd0ab76178?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fCVFNSVBNCU4RiVFNSVBNCVBOXxlbnwwfHwwfHx8MA%3D%3D"
+                alt=""></div>
+        <div class="back">
+            <div class="tex">
+                <p>温柔懒懒的海风</p>
+                <p>吹到高高的山峰</p>
+                <p>温的风 山的锋</p>
+                <p>吹成我伤风</p>
+                <p>为什么你不在</p>
+                <p>为什么你不回来</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
