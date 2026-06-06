@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+        .box{
+            margin: 100px auto;
+            height: 500px;
+            width: 800px;
+            border: 1px solid #000;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr; 
+            gap: 5px;
+            transition: all 0.5s;
+        }
+        .box>li {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .item1{ background-image: url(./images/beach1.avif); }
+        .item2{ background-image: url(./images/beach2.avif); }
+        .item3{ background-image: url(./images/beach3.avif); }
+        .item4{ background-image: url(./images/beach4.avif); }
+
+        /* 核心 hover 逻辑 */
+        /* :has 伪类选择器: 选中包含指定元素的元素 */
+        /* 允许根据子元素的特性反向选择父元素 */
+        .box:has(li:nth-child(1):hover){
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+        }
+        .box:has(li:nth-child(2):hover){
+            grid-template-columns: 1fr 2fr 1fr 1fr;
+        }
+        .box:has(li:nth-child(3):hover){
+            grid-template-columns: 1fr 1fr 2fr 1fr;
+        }
+        .box:has(li:nth-child(4):hover){
+            grid-template-columns: 1fr 1fr 1fr 2fr;
+        }
+    </style>
+</head>
+<body>
+    <ul class="box">
+        <li class="item1"></li>
+        <li class="item2"></li>
+        <li class="item3"></li>
+        <li class="item4"></li>
+    </ul>
+</body>
+</html>
