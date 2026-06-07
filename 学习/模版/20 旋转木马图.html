@@ -11,15 +11,18 @@
             perspective: 1000px;
         }
 
+        body,
+        html {
+            background-color: #171921;
+        }
+
         section {
             position: relative;
             width: 300px;
             height: 200px;
             margin: 150px auto;
             transform-style: preserve-3d;
-            /* 添加动画效果 */
             animation: rotate 10s linear infinite;
-            background: url(media/pig.jpg) no-repeat;
         }
 
         section:hover {
@@ -43,36 +46,38 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url(media/dog.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
         }
 
         section div:nth-child(1) {
             transform: rotateY(0) translateZ(300px);
+            background-image: url(../资料/01-CSS3进阶-2D3D动画/源码以及素材/media/dog.jpg);
         }
 
         section div:nth-child(2) {
-            /* 先旋转好了再 移动距离 */
             transform: rotateY(60deg) translateZ(300px);
+            background-image: url(../资料/01-CSS3进阶-2D3D动画/源码以及素材/media/pig.jpg);
         }
 
         section div:nth-child(3) {
-            /* 先旋转好了再 移动距离 */
             transform: rotateY(120deg) translateZ(300px);
+            background-image: url(../资料/01-CSS3进阶-2D3D动画/源码以及素材/media/pic.jpg);
         }
 
         section div:nth-child(4) {
-            /* 先旋转好了再 移动距离 */
             transform: rotateY(180deg) translateZ(300px);
+            background-image: url(../资料/01-CSS3进阶-2D3D动画/源码以及素材/media/scale.jpg);
         }
 
         section div:nth-child(5) {
-            /* 先旋转好了再 移动距离 */
             transform: rotateY(240deg) translateZ(300px);
+            background-image: url(../资料/01-CSS3进阶-2D3D动画/源码以及素材/media/bg1.png);
         }
 
         section div:nth-child(6) {
-            /* 先旋转好了再 移动距离 */
             transform: rotateY(300deg) translateZ(300px);
+            background-image: url(../资料/01-CSS3进阶-2D3D动画/源码以及素材/media/bg2.png);
         }
     </style>
 </head>
