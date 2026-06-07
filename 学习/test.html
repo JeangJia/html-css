@@ -11,40 +11,32 @@
             box-sizing: border-box;
         }
         .box{
-            margin: 100px auto;
-            /* border: 1px solid #000; */
-            background-color: #000;
-            width: 300px;
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            grid-template-rows: repeat(3,1fr);
-            gap: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: black;
         }
-        li{
-            list-style: none;
-            height: 200px;
-            /* width: 100px; */
-            background-color: #fff;
+        @keyframes move{
+            0%{
+                border-radius: 20%;
+                transform:rotate(0deg)
+            }
+            /* 50%{
+                border-radius: 50%;
+                transform: rotate(360deg);
+            } */
+            100%{
+                border-radius: 20%;
+                transform:rotate(360deg)
+            }
         }
-        .item5{
-            border-radius: 10%;
-        }
-        .item7{
-            border-radius: 0 0 50% 0;
+        .box{
+            animation: move 3s linear infinite ;
         }
     </style>
 </head>
 <body>
-    <ul class="box">
-        <li class="item1"></li>
-        <li class="item2"></li>
-        <li class="item3"></li>
-        <li class="item4"></li>
-        <li class="item5"></li>
-        <li class="item6"></li>
-        <li class="item7"></li>
-        <li class="item8"></li>
-        <li class="item9"></li>
-    </ul>
+    <div class="box">
+
+    </div>
 </body>
 </html>
