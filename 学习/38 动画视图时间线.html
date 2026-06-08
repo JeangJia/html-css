@@ -3,22 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>滚动视口图片滑入动画</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body,
-        html {
+        body, html {
             background-color: #181D27;
         }
         .main{
-            height: 2000px;
+            height: 1000px;
             width: 80%;
             margin: 0 auto;
             border: 1px solid #fff;
+        }
+        .imgwrap{
+            height: 800px;
+            width: 80%;
+            margin: 0 auto;
+            border: 1px solid #fff;
+            position: relative;
+        }
+        .imgwrap img{
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            opacity: 0;
+            /* 基础动画设置 */
+            animation: slideIn 1.2s ease forwards;
+            /* 视图时间线 view()  让动画绑定时间线  */
+            animation-timeline: view();
+            /* 视图范围 entry 10% cover 40% */
+            animation-range: entry 10% cover 40%;
+        }
+        /* 图片1:从左侧滑入 */
+        .img1{
+            top: 300px;
+            left: 0;
+            transform: translateX(-200px);
+            animation-delay: 0s;
+        }
+        /* 图片2:从顶部滑入 */
+        .img2{
+            top: 0;
+            left: 500px;
+            transform: translateY(-200px);
+            animation-delay: 0.2s;
+        }
+        /* 图片3:从右侧滑入 */
+        .img3{
+            top: 300px;
+            left: 600px;
+            transform: translateX(200px);
+            animation-delay: 0.4s;
+        }
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
         }
     </style>
 </head>
@@ -26,7 +74,9 @@
     <div class="box">
         <div class="main"></div>
         <div class="imgwrap">
-            <img src="./images/001.jpg" alt="">
+            <img src="./images/01.jpg" alt="" class="img1">
+            <img src="./images/02.jpg" alt="" class="img2">
+            <img src="./images/03.jpg" alt="" class="img3">
         </div>
     </div>
 </body>
