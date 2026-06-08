@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            background-color: #171921;
+        }
+
+        h1 {
+            position: relative;
+        }
+
+        h1::after {
+            content: 'HELLO WORLD';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: transparent;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff, #5f27cd);
+            /* 文字背景裁剪 text */
+            background-clip: text;
+            animation: move 1s linear infinite alternate;
+        }
+
+        @keyframes move {
+            0% {
+                /* 圆形裁剪路径 clip-path: circle(半径 at 圆心x 圆心y) */
+                clip-path: circle(10% at 0% 50%);
+            }
+
+            100% {
+                clip-path: circle(10% at 100% 50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HELLO WORLD</h1>
+</body>
+
+</html>
