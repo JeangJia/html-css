@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --bgc: #171921;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            background-color: var(--bgc);
+        }
+
+        .head {
+            width: 80vw;
+            height: 100vh;
+            margin: 0 auto;
+            background-color: var(--bgc);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .title {
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .title p {
+            font-size: 24px;
+        }
+
+        .main {
+            width: 80vw;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes fold {
+            0% {
+                transform: scale(1) translateX(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(0.85) translateX(-30px);
+                opacity: 0.9;
+            }
+        }
+
+        .item {
+            position: sticky;
+            top: 0;
+            height: 500px;
+            border-radius: 1em;
+            overflow: hidden;
+            background-color: #fff;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            transform: scale(1);
+            animation: fold 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            /* 动画视图时间线 */
+            animation-timeline: view();
+            will-change: transform, opacity;
+            scroll-behavior: smooth;
+        }
+
+        .item .l {
+            flex: 1;
+            height: 100%;
+            padding: 20px;
+            background-color: #ccc;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item .r {
+            flex: 2;
+            height: 100%;
+        }
+
+        .item .r img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+        
+        .item:hover .r img {
+            transform: scale(1.05);
+        }
+        .footer{
+            width: 80vw;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            line-height: 32px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="title">
+            <h2>图像滚动折叠</h2>
+            <p>👇滚动时,图像会折叠起来</p>
+        </div>
+    </div>
+    <div class="main">
+        <div class="item">
+            <div class="l">
+                <div>
+                    <h2>落日余晖</h2>
+                    <p>这个词通常用来形容夕阳西下时,天空被染成金黄色或橙红色的美丽景象,给人一种宁静和温馨的感觉</p>
+                </div>
+            </div>
+            <div class="r">
+                <img src="./images/1.avif" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="l">
+                <div>
+                    <h2>落日余晖</h2>
+                    <p>这个词通常用来形容夕阳西下时,天空被染成金黄色或橙红色的美丽景象,给人一种宁静和温馨的感觉</p>
+                </div>
+            </div>
+            <div class="r">
+                <img src="./images/2.avif" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="l">
+                <div>
+                    <h2>落日余晖</h2>
+                    <p>这个词通常用来形容夕阳西下时,天空被染成金黄色或橙红色的美丽景象,给人一种宁静和温馨的感觉</p>
+                </div>
+            </div>
+            <div class="r">
+                <img src="./images/3.avif" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <div class="l">
+                <div>
+                    <h2>落日余晖</h2>
+                    <p>这个词通常用来形容夕阳西下时,天空被染成金黄色或橙红色的美丽景象,给人一种宁静和温馨的感觉</p>
+                </div>
+            </div>
+            <div class="r">
+                <img src="./images/4.avif" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Yeah… En…</p>  
+        <p>七月的风懒懒的</p>
+        <p>连云都变热热的</p>
+        <p>不久后天闷闷的</p>
+        <p>一阵雨后雨下过</p>
+        <p>Woo… Yeah…</p>
+        <p>气温 爬升到无法再忍受</p>
+        <p>索性闭上了双眼</p>
+        <p>让想象任意改变</p>
+        <p>场景 两个人一起散着步</p>
+        <p>我的脸也轻轻贴着你胸口</p>
+        <p>听到心跳 Wo…</p>
+        <p>在乎我 和天气一样温度</p>
+        <p>夏天的风 我永远记得</p>
+        <p>清清楚楚的说你爱我</p>
+        <p>我看见你酷酷的笑容</p>
+        <p>也有腼腆的时候</p>
+        <p>夏天的风 正暖暖吹过</p>
+        <p>穿过头发穿过耳朵</p>
+        <p>你和我的夏天</p>
+        <p>风轻轻说着</p>
+        <p>温柔懒懒的海风</p>
+        <p>吹到高高的山峰</p>
+        <p>温的风 山的锋</p>
+        <p>吹成我伤风</p>
+        <p>温柔懒懒的海风</p>
+        <p>吹到高高的山峰</p>
+        <p>温的风 山的锋</p>
+        <p>吹成我伤风</p>
+        <p>温柔懒懒的海风</p>
+        <p>吹到高高的山峰</p>
+        <p>温的风 山的锋</p>
+        <p>吹成我伤风</p>
+        <p>为什么你不在</p>
+        <p>为什么你不回来</p>
+        <p>场景 两个人一起散着步</p>
+        <p>我的脸也轻轻贴着你胸口</p>
+        <p>听到心跳 Wo…</p>
+        <p>在乎我 和天气一样温度</p>
+        <p>夏天的风 我永远记得</p>
+        <p>清清楚楚的说你爱我</p>
+        <p>我看见你酷酷的笑容</p>
+        <p>也有腼腆的时候</p>
+        <p>夏天的风 正暖暖吹过</p>
+        <p>穿过头发穿过耳朵</p>
+        <p>你和我的夏天</p>
+        <p>风轻轻说着</p>
+        <p>夏天的风 我永远记得</p>
+        <p>清清楚楚的说你爱我</p>
+        <p>我看见你酷酷的笑容</p>
+        <p>也有腼腆的时候</p>
+        <p>夏天的风 正暖暖吹过</p>
+        <p>穿过头发穿过耳朵</p>
+        <p>你和我的夏天</p>
+        <br><br><br>
+    </div>
+</body>
+
+</html>
