@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --item-width: 100px;
+            --item-height: 40px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            background-color: #181D27;
+            color: #fff;
+        }
+        .box{
+            width: calc(var(--item-width)*6);
+            margin: 60px auto;
+            display: flex;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 3px 3px 5px rgba(255, 255, 255, .5);
+        }
+        .box li{
+            width: var(--item-width);
+            height: var(--item-height);
+            line-height: var(--item-height);
+            text-align: center;
+            background-color: #30475D;
+            color: #fff;
+            cursor: pointer;
+            z-index: 1;
+            transition: all .2s ;
+            /* 字母全部大写 */
+            text-transform: uppercase;
+            /* 文字背景裁剪 */
+            background-clip: text;
+        }
+        ul{
+            position: relative;
+        }
+        .active{
+            position: absolute;
+            top: 0;
+            left: 0;
+            left: calc(var(--item-width)*0);
+            width: var(--item-width);
+            height: var(--item-height);
+            background-color: #00aeec;
+            border-radius: 15px;
+            transition: all .4s ;
+        }
+        .box li:nth-child(1):hover ~ .active{
+            left: calc(var(--item-width)*0);
+        }
+        .box li:nth-child(2):hover ~ .active{
+            left: calc(var(--item-width)*1);
+            background-color: pink;
+        }
+        .box li:nth-child(3):hover ~ .active{
+            left: calc(var(--item-width)*2);
+            background-color: rgb(255, 130, 151);
+        }
+        .box li:nth-child(4):hover ~ .active{
+            left: calc(var(--item-width)*3);
+            background-color: rgb(255, 135, 135);
+        }
+        .box li:nth-child(5):hover ~ .active{
+            left: calc(var(--item-width)*4);
+            background-color: rgb(255, 85, 85);
+        }
+        .box li:nth-child(6):hover ~ .active{
+            left: calc(var(--item-width)*5);
+            background-color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="box">
+        <li>home</li>
+        <li>about</li>
+        <li>contact</li>
+        <li>services</li>
+        <li>blog</li>
+        <li>contact</li>
+        <span class="active"></span>
+    </ul>
+</body>
+
+</html>
