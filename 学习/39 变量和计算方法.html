@@ -6,77 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            list-style: none;
-        }
-
-        body,
-        html {
-            background-color: #181D27;
-            color: #fff;
+        /* 通过 :root 定义全局变量 */
+        :root {
+            --color: #00aeec;
+            --gap: 10px;
         }
 
         .box {
-            width: 200px;
-            margin: 60px auto;
+            width: 800px;
+            height: 400px;
+            margin: 0 auto;
+            /* 通过 var() 引用全局变量 */
+            border: 1px solid var(--color);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: var(--gap);
         }
 
-        .title {
-            width: 200px;
-            height: 40px;
-            line-height: 40px;
-            border: 1px solid #fff;
-            background-color: #fff;
-            padding-left: 10px;
-            color: #00aeec;
-        }
-
-        .nav li {
-            height: 40px;
-            width: 200px;
-            line-height: 40px;
-            padding-left: 10px;
-            background-color: #fff;
-            color: #181D27;
-            cursor: pointer;
-            transform: translateX(-200px);
-            opacity: 0;
-            /* 只对需要动画的属性设置过渡 */
-            transition: transform .2s ease calc(var(--i)*0.1s),
-                        opacity .2s ease calc(var(--i)*0.1s);
-        }
-
-        .title:hover+.nav li {
-            transform: translateX(0);
-            opacity: 1;
-        }
-
-        /* 当li:hover 时,li 也显示 */
-        .nav:has(li:hover) li {
-            transform: translateX(0);
-            opacity: 1;
-        }
-
-        .nav li:hover {
-            background-color: #00aeec;
-            color: #fff;
+        .item {
+            /* 通过 calc() 计算宽度 */
+            width: calc(33% - var(--gap));
+            /* margin: var(--gap); */
+            background-color: #ccc;
         }
     </style>
 </head>
 
 <body>
     <div class="box">
-        <h4 class="title">菜单</h4>
-        <ul class="nav">
-            <li style="--i:0;">首页</li>
-            <li style="--i:1;">关于我们</li>
-            <li style="--i:2;">联系我们</li>
-            <li style="--i:3;">服务项目</li>
-            <li style="--i:4;">客户案例</li>
-        </ul>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
     </div>
 </body>
 
