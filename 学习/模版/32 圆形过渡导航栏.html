@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./icofont/iconfont.css">
+    <style>
+        :root {
+            --bgc: #171921;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            background-color: var(--bgc);
+        }
+
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            /* border: 1px solid #000; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box span {
+            position: absolute;
+        }
+
+        .btn {
+            width: 68px;
+            height: 68px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            color: #fff;
+            background-color: var(--bgc);
+            transition: all .8s;
+            z-index: 999;
+        }
+
+        .box:hover .btn {
+            transform: rotate(315deg);
+        }
+
+        .btn~span {
+            color: var(--col);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 1px solid var(--col);
+            opacity: 0;
+            transition: all .4s calc(var(--i)*.05s);
+        }
+
+        .btn~span:hover {
+            transition: all 0s;
+            /* 阴影效果 */
+            box-shadow: 0 0 10px var(--col), 0 0 20px var(--col), 0 0 30px var(--col), 0 0 40px var(--col);
+            background-color: var(--col);
+            color: #fff;
+        }
+
+        .box:hover .btn~span {
+            opacity: 1;
+            transform: rotate(calc(360deg/8*var(--i))) translateX(80px);
+        }
+
+        /* 图标反向旋转 */
+        .btn~span i {
+            transform: rotate(calc(-360deg/8*var(--i)));
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span class="btn"><svg t="1781004608129" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="13791" width="32" height="32">
+                <path
+                    d="M925.696 384q19.456 0 37.376 7.68t30.72 20.48 20.48 30.72 7.68 37.376q0 20.48-7.68 37.888t-20.48 30.208-30.72 20.48-37.376 7.68l-287.744 0 0 287.744q0 20.48-7.68 37.888t-20.48 30.208-30.72 20.48-37.376 7.68q-20.48 0-37.888-7.68t-30.208-20.48-20.48-30.208-7.68-37.888l0-287.744-287.744 0q-20.48 0-37.888-7.68t-30.208-20.48-20.48-30.208-7.68-37.888q0-19.456 7.68-37.376t20.48-30.72 30.208-20.48 37.888-7.68l287.744 0 0-287.744q0-19.456 7.68-37.376t20.48-30.72 30.208-20.48 37.888-7.68q39.936 0 68.096 28.16t28.16 68.096l0 287.744 287.744 0z"
+                    p-id="13792" fill="#fff"></path>
+            </svg></span>
+        <span style="--i:0;--col:#3B82F6;"><i class="iconfont icon-liwu"></i></span>
+        <span style="--i:1;--col:#60A5FA;"><i class="iconfont icon-gouwuchekong"></i></span>
+        <span style="--i:2;--col:#818CF8;"><i class="iconfont icon-guanli"></i></span>
+        <span style="--i:3;--col:#A78BFA;"><i class="iconfont icon-shouye"></i></span>
+        <span style="--i:4;--col:#C4B5FD;"><i class="iconfont icon-guanlipingtaiicon_zichanguanli"></i></span>
+        <span style="--i:5;--col:#E9D5FF;"><i class="iconfont icon-24px"></i></span>
+        <span style="--i:6;--col:#06B6D4;"><i class="iconfont icon-shoucang"></i></span>
+        <span style="--i:7;--col:#14B8A6;"><i class="iconfont icon-shezhi"></i></span>
+    </div>
+</body>
+
+</html>
